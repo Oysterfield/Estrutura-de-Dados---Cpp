@@ -1,0 +1,122 @@
+// Copyright [2024] <Autor>
+
+#include "array_list.h"
+
+
+namespace structures {
+
+template<typename T>
+class AVLTree {
+public:
+    ~AVLTree();
+
+    void insert(const T& data);
+
+    void remove(const T& data);
+
+    bool contains(const T& data) const;
+
+    bool empty() const;
+
+    std::size_t size() const;
+
+    int height() const;
+
+    ArrayList<T> pre_order() const;
+
+    ArrayList<T> in_order() const;
+
+    ArrayList<T> post_order() const;
+
+private:
+    struct Node {
+        Node(const T& data);
+
+        T data;
+        int height_;
+        Node* left;
+        Node* right;
+
+        void insert(const T& data_);
+
+        bool remove(const T& data_);
+
+        bool contains(const T& data_) const;
+        
+        void updateHeight() ;
+
+        Node* simpleLeft() {
+            Node *k1 = left;
+            left = k1->right;
+            k1->right = this;
+        }
+
+        Node* simpleRight() ;
+
+        Node* doubleLeft() ;
+        
+        Node* doubleRight() ;
+
+        void pre_order(ArrayList<T>& v) const;
+
+        void in_order(ArrayList<T>& v) const;
+
+        void post_order(ArrayList<T>& v) const;
+
+        int height() {
+            return height_;
+        }
+    };
+
+    Node* root;
+    std::size_t size_;
+};
+
+}
+
+// -----
+
+template<typename T>
+int structures::AVLTree<T>::AVLTree() const {
+    
+}
+
+template<typename T>
+void structures::AVLTree<T>::insert() const {
+}
+
+template<typename T>
+void structures::AVLTree<T>::remove() const {
+}
+
+template<typename T>
+bool structures::AVLTree<T>::contains() const {
+}
+
+template<typename T>
+bool structures::AVLTree<T>::empty() const {
+}
+
+template<typename T>
+std::size_t structures::AVLTree<T>::size() const {
+}
+
+template<typename T>
+int structures::AVLTree<T>::height() const {
+    return root->height();
+}
+
+template<typename T>
+ArrayList<T> structures::AVLTree<T>::pre_order() const {
+    return root->height();
+}
+
+template<typename T>
+ArrayList<T> structures::AVLTree<T>::in_order() const {
+    return root->height();
+}
+
+template<typename T>
+ArrayList<T> structures::AVLTree<T>::post_order() const {
+    return root->height();
+}
