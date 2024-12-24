@@ -1,7 +1,6 @@
 // Copyright [2022] <COLOQUE SEU NOME AQUI...> André Lemos Piucco
 #include <string>
 
-
 class Aluno {
  public:
     Aluno() {}  // construtor
